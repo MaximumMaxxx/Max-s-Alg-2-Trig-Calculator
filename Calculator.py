@@ -11,13 +11,13 @@ def atan(num):
     return(round(math.atan(num),2))
 
 def cos(num):
-    return(round(math.cos(math.radians(30)),2))
+    return(round(math.cos(math.radians(num)),2))
 
 def sin(num):
-    return(round(math.sin(math.radians(30)),2))
+    return(round(math.sin(math.radians(num)),2))
 
 def tan(num):
-    return(round(math.tan(math.radians(30)),2))
+    return(round(math.tan(math.radians(num)),2))
 
 # Function brutally stolen from https://www.w3resource.com/python-exercises/math/python-math-exercise-68.php
 
@@ -92,20 +92,20 @@ def main():
             line=line.lower()
             if line == "opp":
                 opp = float(input("What is the length of the opposite line? "))
-                RSLT = opp*sin(ang)
+                RSLT = opp*tan(ang)
             elif line == "adj":
                 adj = float(input("What is the length of the adjactent line? "))
-                RSLT = adj/sin(ang)
+                RSLT = adj/tan(ang)
         elif ratio == "cos":
             line = input("What angle are you solving for? Opp or Hyp? ")
             ang = float(input("what angle are you solving with? (In Deg) "))
             line=line.lower()
             if line == "adj":
                 hype = float(input("What is the length of the adjacent line? "))
-                RSLT = hype*sin(ang)
+                RSLT = hype*cos(ang)
             elif line == "hyp":
                 opp = float(input("What is the length of the hypotonuse? "))
-                RSLT = opp/sin(ang)
+                RSLT = opp/cos(ang)
         elif ratio == "asin":
             opp = float(input("what is the length of the Opposite line? "))
             hype = float(input("what is the length of the Hypotonuse? "))
