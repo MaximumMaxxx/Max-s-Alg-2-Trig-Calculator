@@ -1,5 +1,7 @@
 # Max-s-Alg-2-Trig-Calculator
 
+[Repl Version](https://replit.com/@MaxwellWindland/Calc)
+
 Currently supports: Trig ratios, Inverse Trig ratios, Pythagarian Theorm
 
 I made this to solve for and with trig ratios becuase it's annoying. Will probably get occasional updates as I have to do different things
