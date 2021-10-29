@@ -78,8 +78,8 @@ def pythag():
 # Opposite
 # Adjacent
 
-
 def main():
+    completed = True
     round_places = 0
     Round = distutils.util.strtobool(input("Do you want to round? "))
     if Round == True:
@@ -113,7 +113,7 @@ def main():
                 adj = float(input("What is the length of the opposite line? "))
                 RSLT = adj/tan(ang,Round,round_places)
         elif ratio == "cos":
-            line = input("What angle are you solving for? Opp or Hyp? ")
+            line = input("What angle are you solving for? Adj or Hyp? ")
             ang = float(input("what angle are you solving with? (In Deg) "))
             line=line.lower()
             if line == "adj":
@@ -136,7 +136,13 @@ def main():
             RSLT = acos(adj/hype,Round,round_places)
     else:
         print("Somehow something didn't work")
-    print(RSLT)
+        completed = False
+    if completed:    
+        print(RSLT)
+        Again = distutils.util.strtobool(input("Do you want to run again?"))
+        if Again:
+            main()
+
 if __name__ == "__main__":
     main()
 
