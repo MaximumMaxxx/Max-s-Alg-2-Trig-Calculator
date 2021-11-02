@@ -109,7 +109,7 @@ def main():
                 opp = float(input("What is the length of the adjactent line? "))
                 RSLT = opp*tan(ang,Round,round_places)
             elif line == "adj":
-                adj = float(input("What is the length of the opposite line? "))
+                adj = float(input("What i ras the length of the opposite line? "))
                 RSLT = adj/tan(ang,Round,round_places)
         elif ratio == "cos":
             line = input("What angle are you solving for? Adj or Hyp? ")
