@@ -86,7 +86,6 @@ def main():
         round_places = int(input("How many places do you want to round to? "))
     USR = str(input("What would you like to do? Pythag, Trig: "))
     USR = USR.lower()
-    print(USR)
     if USR == "pythag":
         pythag()
     elif USR == "trig":
