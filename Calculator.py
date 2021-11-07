@@ -1,36 +1,18 @@
 import math, distutils.util
 
-def acos(num,round_bool,round_num):
-    if round_bool:    
-        return(round(math.acos(num),round_num))
-    else:
-        return(math.acos(num),None)
-
-def asin(num,round_bool,round_num):
-    if round_bool:
-        return(round(math.asin(num),round_num))
-    else:
+def acos(num):
+        return(math.acos(num))
+def asin(num):
         return(math.asin(num))
-def atan(num,round_bool,round_num):
-    if round_bool:
-        return(round(math.atan(num),round_num))
-    else:
+def atan(num):
         return(math.atan(num))
-def cos(num,round_bool,round_num):
-    if round_bool:
-        return(round(math.cos(math.radians(num)),round_num))
-    else:
+def cos(num):
         return(math.cos(math.radians(num)))
-def sin(num,round_bool,round_num):
-    if round_bool:    
-        return(round(math.sin(math.radians(num)),round_num))
-    else:
+def sin(num):
         return(math.sin(math.radians(num)))
-def tan(num,round_bool,round_num):
-    if round_bool:
-        return(round(math.tan(math.radians(num)),round_num))
-    else:
+def tan(num):
         return(math.tan(math.radians(num)))
+
 # Function brutally stolen from https://www.w3resource.com/python-exercises/math/python-math-exercise-68.php
 
 def pythag():
@@ -93,52 +75,55 @@ def main():
         ratio = ratio.lower()
         if ratio == "sin":
             line = input("What angle are you solving for? Opp or Hyp? ")
-            ang = float(input("what angle are you solving with? (In Deg)" ))
+            ang = float(input("what angle are you solving with? (In Deg) " ))
             line=line.lower()
             if line == "opp":
                 hype = float(input("What is the length of the hypotonuse? "))
-                RSLT = hype*sin(ang,Round,round_places)
+                RSLT = hype*sin(ang)
             elif line == "hyp":
                 opp = float(input("What is the length of the opposite line? "))
-                RSLT = opp/sin(ang,Round,round_places)
+                RSLT = opp/sin(ang)
         elif ratio == "tan":
             line = input("What angle are you solving for? Opp or Adj? ")
             ang = float(input("what angle are you solving with? (In Deg) "))
             line=line.lower()
             if line == "opp":
                 opp = float(input("What is the length of the adjactent line? "))
-                RSLT = opp*tan(ang,Round,round_places)
+                RSLT = opp*tan(ang)
             elif line == "adj":
                 adj = float(input("What i ras the length of the opposite line? "))
-                RSLT = adj/tan(ang,Round,round_places)
+                RSLT = adj/tan(ang)
         elif ratio == "cos":
             line = input("What angle are you solving for? Adj or Hyp? ")
             ang = float(input("what angle are you solving with? (In Deg) "))
             line=line.lower()
             if line == "adj":
                 hype = float(input("What is the length of the hypotonuse line? "))
-                RSLT = hype*cos(ang,Round,round_places)
+                RSLT = hype*cos(ang)
             elif line == "hyp":
                 opp = float(input("What is the length of the adjacent? "))
-                RSLT = opp/cos(ang,Round,round_places)
+                RSLT = opp/cos(ang)
         elif ratio == "asin":
             opp = float(input("what is the length of the Opposite line? "))
             hype = float(input("what is the length of the Hypotonuse? "))
-            RSLT = asin(opp/hype,Round,round_places)
+            RSLT = asin(opp/hype)
         elif ratio == "atan":
             opp = float(input("what is the length of the Opposite line? "))
             adj = float(input("what is the length of the Adjacent Line? "))
-            RSLT = atan(opp/adj,Round,round_places)
+            RSLT = atan(opp/adj)
         elif ratio == "acos":
             adj = float(input("what is the length of the Adjacent line? "))
             hype = float(input("what is the length of the Hypotonuse? "))
-            RSLT = acos(adj/hype,Round,round_places)
+            RSLT = acos(adj/hype)
     else:
         print("Somehow something didn't work")
         completed = False
     if completed:    
-        print(RSLT)
-        Again = distutils.util.strtobool(input("Do you want to run again?"))
+        if Round:
+            print(round(RSLT,round_places))
+        else:
+            print(RSLT)
+        Again = distutils.util.strtobool(input("Do you want to run again? "))
         if Again:
             main()
 
