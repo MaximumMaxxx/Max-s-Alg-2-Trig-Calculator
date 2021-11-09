@@ -1,11 +1,11 @@
 import math, distutils.util
 
 def acos(num):
-        return(math.acos(num))
+        return(math.degrees(math.acos(num)))
 def asin(num):
-        return(math.asin(num))
+        return(math.degrees(math.asin(num)))
 def atan(num):
-        return(math.atan(num))
+        return(math.degrees(math.atan(num)))
 def cos(num):
         return(math.cos(math.radians(num)))
 def sin(num):
