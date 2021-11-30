@@ -48,6 +48,7 @@ def pythag():
     else:
         print('Please select a side between a, b, c')
 
+# SOH CAH TOA
 # Sine
 # Opposite
 # Hypotonuse
@@ -73,48 +74,60 @@ def main():
     elif USR == "trig":
         ratio = input("What trig ratio do you want to use? Note: Use the 3 letter names for the ratio: ")
         ratio = ratio.lower()
-        if ratio == "sin":
-            line = input("What angle are you solving for? Opp or Hyp? ")
-            ang = float(input("what angle are you solving with? (In Deg) " ))
-            line=line.lower()
-            if line == "opp":
-                hype = float(input("What is the length of the hypotonuse? "))
-                RSLT = hype*sin(ang)
-            elif line == "hyp":
-                opp = float(input("What is the length of the opposite line? "))
-                RSLT = opp/sin(ang)
-        elif ratio == "tan":
-            line = input("What angle are you solving for? Opp or Adj? ")
-            ang = float(input("what angle are you solving with? (In Deg) "))
-            line=line.lower()
-            if line == "opp":
-                opp = float(input("What is the length of the adjactent line? "))
-                RSLT = opp*tan(ang)
-            elif line == "adj":
-                adj = float(input("What i ras the length of the opposite line? "))
-                RSLT = adj/tan(ang)
-        elif ratio == "cos":
-            line = input("What angle are you solving for? Adj or Hyp? ")
-            ang = float(input("what angle are you solving with? (In Deg) "))
-            line=line.lower()
-            if line == "adj":
-                hype = float(input("What is the length of the hypotonuse line? "))
-                RSLT = hype*cos(ang)
-            elif line == "hyp":
-                opp = float(input("What is the length of the adjacent? "))
-                RSLT = opp/cos(ang)
-        elif ratio == "asin":
-            opp = float(input("what is the length of the Opposite line? "))
-            hype = float(input("what is the length of the Hypotonuse? "))
-            RSLT = asin(opp/hype)
-        elif ratio == "atan":
-            opp = float(input("what is the length of the Opposite line? "))
-            adj = float(input("what is the length of the Adjacent Line? "))
-            RSLT = atan(opp/adj)
-        elif ratio == "acos":
-            adj = float(input("what is the length of the Adjacent line? "))
-            hype = float(input("what is the length of the Hypotonuse? "))
-            RSLT = acos(adj/hype)
+        triangle = distutils.util.strtobool(input("Are you solving for a triangle? Y/N "))
+        if triangle:
+            if ratio == "sin":
+                line = input("What angle are you solving for? Opp or Hyp? ")
+                ang = float(input("what angle are you solving with? (In Deg) " ))
+                line=line.lower()
+                if line == "opp":
+                    hype = float(input("What is the length of the hypotonuse? "))
+                    RSLT = hype*sin(ang)
+                elif line == "hyp":
+                    opp = float(input("What is the length of the opposite line? "))
+                    RSLT = opp/sin(ang)
+            elif ratio == "tan":
+                line = input("What angle are you solving for? Opp or Adj? ")
+                ang = float(input("what angle are you solving with? (In Deg) "))
+                line=line.lower()
+                if line == "opp":
+                    opp = float(input("What is the length of the adjactent line? "))
+                    RSLT = opp*tan(ang)
+                elif line == "adj":
+                    adj = float(input("What i ras the length of the opposite line? "))
+                    RSLT = adj/tan(ang)
+            elif ratio == "cos":
+                line = input("What angle are you solving for? Adj or Hyp? ")
+                ang = float(input("what angle are you solving with? (In Deg) "))
+                line=line.lower()
+                if line == "adj":
+                    hype = float(input("What is the length of the hypotonuse line? "))
+                    RSLT = hype*cos(ang)
+                elif line == "hyp":
+                    opp = float(input("What is the length of the adjacent? "))
+                    RSLT = opp/cos(ang)
+            elif ratio == "asin":
+                opp = float(input("what is the length of the Opposite line? "))
+                hype = float(input("what is the length of the Hypotonuse? "))
+                RSLT = asin(opp/hype)
+            elif ratio == "atan":
+                opp = float(input("what is the length of the Opposite line? "))
+                adj = float(input("what is the length of the Adjacent Line? "))
+                RSLT = atan(opp/adj)
+            elif ratio == "acos":
+                adj = float(input("what is the length of the Adjacent line? "))
+                hype = float(input("what is the length of the Hypotonuse? "))
+                RSLT = acos(adj/hype)
+        else:
+            if ratio == "sin":
+                ang = float(input("what is the angle? (In Deg) "))
+                RSLT = sin(ang)
+            elif ratio == "tan":
+                ang = float(input("what is the angle? (In Deg) "))
+                RSLT = tan(ang)
+            elif ratio == "cos":
+                ang = float(input("what is the angle? (In Deg) "))
+                RSLT = cos(ang)
     else:
         print("Somehow something didn't work")
         completed = False
@@ -129,4 +142,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
